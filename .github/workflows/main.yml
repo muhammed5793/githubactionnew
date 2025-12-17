@@ -1,0 +1,11 @@
+name: new
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cont:
+    runs-on: ubuntu-latest
+    steps:
+      - name: demo
+        run: echo "this is repo ${{ github.repository }}"
