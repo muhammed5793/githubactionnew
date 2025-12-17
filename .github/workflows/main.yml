@@ -1,17 +1,26 @@
 name: new
 
+env:
+  new: haris
+
 on:
   workflow_dispatch:
 
 jobs:
+
   cont:
     runs-on: ubuntu-latest
+    env:
+     woo: har
     steps:
       - name: repo
         run: echo "this is repo ${{ github.repository }}"
+
       - name: runner
-        run: echo "this is architecture ${{runner.arch}}"
+        run: echo "this is architecture ${{ runner.arch }}"
+
       - name: job
-        run: echo "this is job status ${{job.status}}"
-        
-      
+        run: echo "this is job status ${{ job.status }}"
+
+      - name: env
+        run: echo "this is env variable ${{ env.new }} and job level is ${{env.woo}}"
